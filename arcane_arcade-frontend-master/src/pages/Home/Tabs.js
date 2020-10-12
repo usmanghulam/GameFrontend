@@ -2,8 +2,7 @@ import React from "react";
 import { Tabs, Tab, Row, Col } from 'react-bootstrap';
 import kingdom_come from "../../img/kingdom_come.jpeg";
 import biomutant_slider from "../../img/biomutant_slider.jpg";
-import GamesTiles from "./GamesTiles";
-import Toolbar from "./Toolbar";
+import { Splide, SplideSlide } from '@splidejs/react-splide';
 
 export default () => (
   <Tabs className="homepage-tabs" defaultActiveKey="profile" id="uncontrolled-tab-example">
@@ -20,13 +19,20 @@ export default () => (
                 </div>
             </Col>
          </Row>
-         <GamesTiles />
          
       </Tab>
       <Tab eventKey="profile" title="Explore">
-            <img src={biomutant_slider} className="img-fluid" height="494"/>
-            <Toolbar />
-            <GamesTiles />
+		<Splide>
+			<SplideSlide>
+				<img src={biomutant_slider} className="img-fluid" height="494"/>
+			</SplideSlide>
+			<SplideSlide>
+				<img src={biomutant_slider} className="img-fluid" height="494"/>
+			</SplideSlide>
+			<SplideSlide>
+				<img src={biomutant_slider} className="img-fluid" height="494"/>
+			</SplideSlide>
+		</Splide>
       </Tab>
   </Tabs>
 );
